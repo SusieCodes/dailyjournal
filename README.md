@@ -1,2 +1,2 @@
 # dailyjournal
-https://github.com/SusieCodes/dailyjournal/blob/main/images/dailyjournalwireframe.png
+![image](https://github.com/SusieCodes/dailyjournal/blob/main/images/dailyjournalwireframe.png)
