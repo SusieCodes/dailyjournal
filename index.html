@@ -15,8 +15,7 @@
   <main>
 
     <header>
-      <img src="images/jlogo.png" alt="Susie's Journal Logo">
-      <h1>Susie's Daily Journal</h1>
+      <img src="images/susielogo.png" alt="Susie's Journal Logo">
     </header>
 
     <section class="input-form">
@@ -35,17 +34,17 @@
               <label for="concepts">Concepts Covered</label>
             </div> <!-- closes label -->
             <div class="input">
-              <input type="text" name="concepts" id="concepts">
+              <input type="text" name="concepts" id="concepts" placeholder="Type concept here">
             </div> <!-- closes input -->
 
             <div class="label">
               <label for="journalEntry">Journal Entry</label>
               </div> <!-- closes label -->
             <div class="input">
-              <textarea name="journalEntry" id="journalEntry" rows="2" cols="30">Write something here</textarea>
+              <textarea name="journalEntry" id="journalEntry" placeholder="Write something here"></textarea>
             </div> <!-- closes input -->
 
-            <div class="label">
+            <div class="mood-label">
               <label for="mood">Mood For The Day</label>
             </div> <!-- closes label -->
             <div class="input">
@@ -61,15 +60,19 @@
 
           </fieldset>
         </form>
-        <button>Record Journal Entry</button>
+
+        <button class="btn-record">Record Journal Entry</button>
+
     </section> <!-- closes input-form -->
 
-    <section class="entry-list"> 
-        <a href="#">Journal Entry One</a>
-        <a href="#">Journal Entry Two</a>
-        <a href="#">Journal Entry Three</a>
-        <a href="#">Journal Entry Four</a>
-        <a href="#">Journal Entry Five</a>
+    <section class="entry-list">
+      <ul> 
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+      </ul>
     </section> <!-- closes entry-list -->
 
     <section class="entry">
@@ -81,12 +84,16 @@
 
   </main>
 
+
+
   <footer>
+    <div class="footer">
     <p>Susie Stanley<br>
     <a class="github" href="https://github.com/SusieCodes" target="_blank">Visit My GitHub</a></p>
     <p class="copyright">&copy;2021 All Rights Reserved</p>
-
+    </div> <!-- closes .footer-->
   </footer>
-  <script src="scripts/main.js"></script>
+
+  <script type="module" src="./scripts/main.js"></script>
 </body>
 </html>
