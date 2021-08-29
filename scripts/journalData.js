@@ -61,3 +61,6 @@ export const getJournalEntries = () => {
     )
     return sortedByDate
 }
+
+let date = toDateString('07/24/2021');
+console.log(date);
