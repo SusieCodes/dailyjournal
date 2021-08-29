@@ -49,12 +49,15 @@
             </div> <!-- closes label -->
             <div class="input">
               <select name="mood" id="mood">
-                <option value="happy">😃 Happy</option>
-                <option value="grateful">🙏🏻 Grateful</option>
-                <option value="inspired">🤩 Inspired</option>
-                <option value="tired">🥱 Tired</option>
-                <option value="sad">😥 Sad</option>
-                <option value="deflated">😔 Deflated</option>
+                <option value="happy">&nbsp; 😃 &nbsp; Happy</option>
+                <option value="grateful">&nbsp; 🙏🏻 &nbsp; Grateful</option>
+                <option value="inspired">&nbsp; 🤩 &nbsp; Inspired</option>
+                <option value="inspired">&nbsp; 🤗 &nbsp; Excited</option>
+                <option value="content">&nbsp; 🥰 &nbsp; Content</option>
+                <option value="tired">&nbsp; 🥱 &nbsp; Tired</option>
+                <option value="sad">&nbsp; 😥 &nbsp; Sad</option>
+                <option value="deflated">&nbsp; 😔 &nbsp; Deflated</option>
+                <option value="deflated">&nbsp; 🤢 &nbsp; Unwell</option>
               </select>
             </div> <!-- closes input -->
 
@@ -64,6 +67,8 @@
         <button class="btn-record">Record Journal Entry</button>
 
     </section> <!-- closes input-form -->
+
+    <div class="line"></div> <!-- creates horizontal line -->
 
     <section class="entry-list">
       <ul> 
@@ -75,20 +80,20 @@
       </ul>
     </section> <!-- closes entry-list -->
 
-    <section class="entry">
-      <article>
-        <h2>Journal Entry</h2>
-        <p>Put a bunch of info here</p>
-      </article>
-    </section> <!-- closes entry -->
+    <div class="line"></div> <!-- creates horizontal line -->
 
+    <section id="entryLog" class="entry">
+        <!-- HTML rendered from javascript -->
+        <!-- classes injected are: journalEntry, entry-date, entry-concept, entry-entry -->
+    </section> <!-- closes id:entryLog class:entry-->
+
+    <div class="line"></div> <!-- creates horizontal line -->
+  
   </main>
-
-
 
   <footer>
     <div class="footer">
-    <p>Susie Stanley<br>
+    <p>Created by Susie Stanley<br>
     <a class="github" href="https://github.com/SusieCodes" target="_blank">Visit My GitHub</a></p>
     <p class="copyright">&copy;2021 All Rights Reserved</p>
     </div> <!-- closes .footer-->
