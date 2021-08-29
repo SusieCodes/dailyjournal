@@ -4,8 +4,8 @@
  *    there are items in the collection exposed by the
  *    data module component
  */
-import { getJournalEntries } from "./JournalData.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+import { getJournalEntries } from "./journalData.js"
+import { JournalEntryComponent } from "./journalEntry.js"
 
 const entryLog = document.querySelector("#entryLog");
 
