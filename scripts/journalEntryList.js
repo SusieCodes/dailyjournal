@@ -7,18 +7,21 @@
 import { getJournalEntries } from "./JournalData.js"
 import { JournalEntryComponent } from "./JournalEntry.js"
 
-// DOM reference to where all entries will be rendered
-const entryLog = document.querySelector("#entryLog")
+const entryLog = document.querySelector("#entryLog");
 
 export const EntryListComponent = () => {
-    // Use the journal entry data from the data module component
-    const entries = getJournalEntries()
 
-    for (const entry of entries) {
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */
-        entryLog.innerHTML += JournalEntryComponent()
+    const allEntries = getJournalEntries();
+    addEntriesToDom(allEntries);
+
+}
+
+const addEntriesToDom = (arrayOfEntries) => {
+
+    let entryHTMLRep = "";
+    for (const singleEntry of arrayOfEntries) {
+        entryHTMLRep += JournalEntryComponent(singleEntry);
     }
+    
+    entryLog.innerHTML += entryHTMLRep
 }

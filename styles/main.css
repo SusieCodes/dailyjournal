@@ -1,4 +1,5 @@
 body {
+    font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
 }
@@ -7,27 +8,36 @@ header {
     text-align: center;
 }
 
+/* logo */
 header img {
     width: 175px;
     padding-top: 20px;
 }
 
-.input-form {
+/* set main as flexbox so horizontal lines on page would center  */
+main {
     display: flex;
     flex-direction: column;
-    font-family: "Poppins", sans-serif;
-    font-size: 22px;
-    color: black;
-    text-align: left;
-    
-}
-
-.input-form h2 {
+    justify-content: center;
     text-align: center;
 }
 
+.input-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-form h2 {
+    font-size: 34px;
+    text-align: center;
+}
+
+/* pink form body */
 fieldset {
-    width: 400px;
+    width: 450px; /* match .journalEntry */
+    font-size: 22px;
+    font-weight: 400;
+    text-align: left;
     padding: 0px 20px 20px 20px;
     background-color: #EED5D2;
     border: 3px solid #BB7F8A;
@@ -35,27 +45,23 @@ fieldset {
     margin: 0px auto;
 }
 
+/* first 3 labels in form */
 .label {
-    padding: 0px 0px 0px 0px;
-    margin: 10px 0px 0px 0px;
-}
-
-.mood-label {
-    padding: 0px 0px 0px 0px;
-    margin: 0px 0px 0px 0px;
-}
-
-input {
-    margin: 0px;
     padding: 0px;
+    margin-top: 10px;
+}
+
+/* last label in form - separated from label class because label created uneven vertical spacing */
+.mood-label {
+    padding: 0px;
+    margin: 0px;
 }
 
 #journalDate {
     width: 250px;
     height: 25px;
+    font-size: 16px; /* affects text inside input box only */
     padding-left: 10px;
-    margin: 0px;
-    font-size: 16px;
     border: 1px solid black;
     border-radius: 5px;
 }
@@ -63,42 +69,37 @@ input {
 #concepts {
     width: 250px;
     height: 25px;
+    font-size: 16px; /* affects text inside input box only */
     padding-left: 10px;
-    font-size: 16px;
     border: 1px solid black;
     border-radius: 5px;
 }
 
 #journalEntry {
-    width: 388px;
+    width: 436px; /* form textbox input for Journal Entry  */
     height: 75px;
+    font-family: "Poppins", sans-serif; /* needed otherwise default textarea font used */
+    font-size: 16px; /* affects text inside input box only */
     padding: 5px 0px 0px 10px;
-    margin: 5px 0px 0px 0px;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
+    margin-top: 5px;
     border: 1px solid black;
     border-radius: 5px;
-}
-
-textarea {
-    padding: 0px;
-    margin: 0px;
 }
 
 #mood {
     width: 260px;
     height: 30px;
-    font-size: 16px;
+    font-size: 16px; /* affects text inside input box only */
     border: 1px solid black;
     border-radius: 5px;
 
 }
 
+/* Record Journal Entry button */
 .btn-record {
-    width: 446px;
+    width: 496px; /* match .footer & .line */
     padding: 10px;
-    margin: 10px;
-    font-family: "Poppins", sans-serif;
+    margin: 10px 0px 30px 0px;
     font-size: 22px;
     background-color: #d7a9b2;
     border: 3px solid #BB7F8A;
@@ -106,71 +107,89 @@ textarea {
     align-self: center;
 }
 
+/* starts list of journal entries */
 .entry-list {
-    font-family: 'Poppins', sans-serif;
     font-size: 22px;
-    font-weight: 400;
-    padding: 50px 0px;
+    padding: 30px 0px;
     text-align: center;
 }
 .entry-list ul {
     list-style-type: none;
-    list-style-position:inside;
     padding: 0px;
-    margin-left: -50px;
+    margin-left: -50px; /* reduces indent of list  */
 }
 
 ul li:before {
-    content: '\2615';
-    margin: 0px 20px;
+    content: '\2615'; /* this makes the coffee emoji bullets */
+    margin: 0px 20px; /* the left right margin creates space after emoji */
 }
 
 .entry-list a {
-    font-family: 'Poppins', sans-serif;
     font-size: 22px;
-    font-weight: 400;
     color: #d7a9b2;
     padding: 0px;
     margin: 0px;
     text-align: left;
     text-decoration: none;
 }
+/* ends list of journal entries */
 
-.entry {
+.line {
+    margin: 0px auto;
+    width: 496px; /* match .btn-record & .footer  */
+    border-top: 3px solid #BB7F8A; /* creates pink line */
+}
+
+/* container that holds all journal entries */
+#entryLog {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-family: 'Poppins', sans-serif;
+    flex-direction: column;
+    justify-content: space-evenly;
     font-size: 22px;
-    font-weight: 400;
-    color: #BB7F8A;    text-align: left;
-    text-decoration: none;
-    padding: 0px;
-    margin-bottom: 30px;
-}
-.entry article {
-    width: 446px;
+    color: #BB7F8A;    
     text-align: left;
+    text-decoration: none;
+    padding: 10px 0px;
+    margin: 10px 0px;
 }
 
-.entry h2 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 30px;
+/* starts journalEntry styling - this targets HTML rendered by JournalEntryComponent function in journalEntry.js  */
+.journalEntry {
+    align-self: center;
+    width: 450px; /* match fieldset */
+    margin: 10px 0px;
+    text-align: left;
+    padding: 20px;
+    background-color: #EED5D2;
+    border: 3px solid #BB7F8A;
+}
+
+.entry-date {
+    font-size: 18px;
     font-weight: 500;
+    color: black; 
+    padding: 0px;
+    margin-bottom: 10px;
+}
+
+.entry-concept {
+    font-size: 22px;
+    font-weight: 600;
     color: #BB7F8A; 
     padding: 0px;
     margin: 0px;
 }
 
-.entry p {
-    font-family: 'Poppins', sans-serif;
+.entry-entry {
     font-size: 18px;
-    font-weight: 100;
-    color: #d7a9b2; 
+    font-weight: 300;
+    color: black; 
     padding: 0px;
     margin: 0px;
 }
+/* ends journalEntry styling  */
 
+/* starts footer styling */
 footer {
     display: flex;
     flex-direction: row;
@@ -181,23 +200,19 @@ footer {
 }
 
 .footer {
-    width: 446px;
-    margin: 0px auto;
-    border-top: 3px solid #BB7F8A;
+    width: 496px; /* match .btn-record & .line */
+    margin: 0px;
     text-align: center;
 }
 
 .footer p {
-    font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    font-weight: 400;
     color: #d7a9b2; 
     padding-top: 20px;
     margin: 0px; 
 }
 
 .footer a {
-    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     font-weight: 400;
     color: #BB7F8A; 
@@ -214,3 +229,4 @@ p.copyright {
     padding: 0px;
     margin: 20px 10px; 
 }
+/* ends footer styling */
