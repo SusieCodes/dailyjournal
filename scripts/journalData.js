@@ -61,3 +61,10 @@ export const getJournalEntries = () => {
     )
     return sortedByDate
 }
+
+// let origDate = journal[0].date;
+// console.log(origDate);
+
+
+// let date = toDateString('07/24/2021');
+// console.log(date);

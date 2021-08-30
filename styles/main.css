@@ -41,7 +41,7 @@ fieldset {
     padding: 0px 20px 20px 20px;
     background-color: #EED5D2;
     border: 3px solid #BB7F8A;
-    border-radius: 5px;
+    border-radius: 10px;
     margin: 0px auto;
 }
 
@@ -103,7 +103,7 @@ fieldset {
     font-size: 22px;
     background-color: #d7a9b2;
     border: 3px solid #BB7F8A;
-    border-radius: 5px;
+    border-radius: 10px;
     align-self: center;
 }
 
@@ -162,6 +162,7 @@ ul li:before {
     padding: 20px;
     background-color: #EED5D2;
     border: 3px solid #BB7F8A;
+    border-radius: 10px;
 }
 
 .entry-date {
