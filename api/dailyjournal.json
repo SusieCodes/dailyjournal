@@ -1,0 +1,20 @@
+{
+	"users": [
+        {
+            "id": "1",
+            "name": "Susie",
+            "dateJoined": "1630513838389",
+            "email": "susie.stanley3@yahoo.com"
+        },
+        {
+            "id": "1",
+            "name": "Brenda",
+            "dateJoined": "1630513838389",
+            "email": "brenda@yahoo.com"   
+        }
+
+    ],
+	"posts": [],
+	"moods":[]
+
+}
