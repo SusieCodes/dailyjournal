@@ -2,10 +2,13 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
+    /* background-image: url("../images/spanishtile.png");
+    background-repeat: repeat; */
 }
 
 header {
     text-align: center;
+    background-color: white;
 }
 
 /* logo */
@@ -20,6 +23,7 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: white;
 }
 
 .input-form {
