@@ -14,7 +14,16 @@
         }
 
     ],
-	"posts": [],
+	"posts": [
+        {
+            "id": "1",
+            "timestamp": "09/01/2021",
+            "title": "First Post",
+            "entry": "This is my very first journal entry using JSON database",
+            "mood": "happy",
+            "userId": "333"
+        }
+    ],
 	"moods":[]
 
 }
