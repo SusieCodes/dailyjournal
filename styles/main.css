@@ -2,10 +2,13 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
+    /* background-image: url("../images/spanishtile.png");
+    background-repeat: repeat; */
 }
 
 header {
     text-align: center;
+    background-color: white;
 }
 
 /* logo */
@@ -20,6 +23,7 @@ main {
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: white;
 }
 
 .input-form {
@@ -90,10 +94,23 @@ fieldset {
     width: 260px;
     height: 30px;
     font-size: 16px; /* affects text inside input box only */
+    padding-right: 10px;
     border: 1px solid black;
     border-radius: 5px;
 
 }
+
+/* .mood-input {
+    position: relative;
+  }
+  
+.mood-input::after {
+    content: "▼ ";
+    font-size: 1rem;
+    top: 6px;
+    right: 10px;
+    position: absolute;
+} */
 
 /* Record Journal Entry button */
 .btn-record {
