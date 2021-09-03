@@ -19,31 +19,31 @@
       "timestamp": 1630401038389,
       "concept": "First Post",
       "entry": "This is my very first journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Excited",
       "userId": "333"
     },
     {
       "id": 2,
       "timestamp": 1630491038389,
-      "title": "Another Post",
+      "concept": "Another Post",
       "entry": "This is my second journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Grateful",
       "userId": "333"
     },
     {
       "id": 3,
       "timestamp": 1630591038389,
-      "title": "First Post",
+      "concept": "Third Post",
       "entry": "This is my third journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Inspired",
       "userId": "333"
     },
     {
       "id": 4,
       "timestamp": 1630651038389,
-      "title": "First Post",
+      "concept": "Another One",
       "entry": "This is my fourth journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Happy",
       "userId": "333"
     }
   ],

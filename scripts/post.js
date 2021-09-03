@@ -8,7 +8,9 @@ export const Post = (entryObj) => {
             <div class="entry-date">${pageDate}</div>
             <h2 class="entry-concept">${entryObj.concept}</h2>
             <div class="entry-entry">${entryObj.entry}</div>
-            <div class="entry-entry">${entryObj.mood}</div>
+            <div class="mood-style">
+            <div class="entry-mood">Mood:</div><div class="entry-mood__info">${entryObj.mood}</div>
+            </div>
 
         </section>`
   }
