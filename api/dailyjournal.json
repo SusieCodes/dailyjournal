@@ -15,19 +15,35 @@
   ],
   "posts": [
     {
-      "id": "1",
-      "timestamp": "09/01/2021",
-      "title": "First Post",
+      "id": 1,
+      "timestamp": 1630401038389,
+      "concept": "First Post",
       "entry": "This is my very first journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Excited",
       "userId": "333"
     },
     {
-      "id": "2",
-      "timestamp": "09/01/2021",
-      "title": "Another Post",
+      "id": 2,
+      "timestamp": 1630491038389,
+      "concept": "Another Post",
       "entry": "This is my second journal entry using JSON database",
-      "mood": "happy",
+      "mood": "Grateful",
+      "userId": "333"
+    },
+    {
+      "id": 3,
+      "timestamp": 1630591038389,
+      "concept": "Third Post",
+      "entry": "This is my third journal entry using JSON database",
+      "mood": "Inspired",
+      "userId": "333"
+    },
+    {
+      "id": 4,
+      "timestamp": 1630651038389,
+      "concept": "Another One",
+      "entry": "This is my fourth journal entry using JSON database",
+      "mood": "Happy",
       "userId": "333"
     }
   ],

@@ -3,10 +3,10 @@
  *           HTML representation of the data
  */
 
-import { FormatDate } from "./helper.js"
+import { formatDate } from "./helper.js"
 
 export const JournalEntryComponent = (entryObj) => {
-    let pageDate = FormatDate(entryObj.date);
+    let pageDate = formatDate(entryObj.date);
     return `
         <section id="entry--${entryObj.id}" class="journalEntry">
 
