@@ -1,20 +1,7 @@
-/*
- *  Purpose:
- *    To render as many journal entry components as
- *    there are items in the collection exposed by the
- *    data module component
- */
 // import { getJournalEntries } from "./journalData.js"
 // import { JournalEntryComponent } from "./journalEntry.js"
 
 // const entryLog = document.querySelector("#entryLog");
-
-// export const EntryListComponent = () => {
-
-//     const allEntries = getJournalEntries();
-//     addEntriesToDom(allEntries);
-
-// }
 
 // const addEntriesToDom = (arrayOfEntries) => {
 
@@ -26,16 +13,20 @@
 //     entryLog.innerHTML += entryHTMLRep
 // }
 
+// export const EntryListComponent = () => {
+//     const allEntries = getJournalEntries();
+//     addEntriesToDom(allEntries);
+// }
 
-import { Post } from "./post.js";
+// import { Post } from "./post.js";
 
-export const postList = (allPosts) => {
-	let postHTML = "";
-		//Loop over the array of posts and for each one, invoke the Post component which returns HTML representation
-		for (const postObject of allPosts) {
-			//what is a postObject?
-			postHTML += Post(postObject)
-		}
-		return postHTML;
+// export const postList = (allPosts) => {
+// 	let postHTML = "";
+// 		//Loop over the array of posts and for each one, invoke the Post component which returns HTML representation
+// 		for (const postObject of allPosts) {
+// 			//what is a postObject?
+// 			postHTML += Post(postObject)
+// 		}
+// 		return postHTML;
 	
-}
+// }
