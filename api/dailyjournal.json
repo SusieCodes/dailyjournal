@@ -17,33 +17,17 @@
     {
       "id": 1,
       "timestamp": 1630401038389,
-      "concept": "First Post",
+      "concept": "My First Practice Post",
       "entry": "This is my very first journal entry using JSON database",
-      "mood": "Excited",
-      "userId": "333"
-    },
-    {
-      "id": 2,
-      "timestamp": 1630491038389,
-      "concept": "Another Post",
-      "entry": "This is my second journal entry using JSON database",
-      "mood": "Grateful",
-      "userId": "333"
-    },
-    {
-      "id": 3,
-      "timestamp": 1630591038389,
-      "concept": "Third Post",
-      "entry": "This is my third journal entry using JSON database",
       "mood": "Inspired",
       "userId": "333"
     },
     {
-      "id": 4,
-      "timestamp": 1630651038389,
-      "concept": "Another One",
-      "entry": "This is my fourth journal entry using JSON database",
-      "mood": "Happy",
+      "id": 2,
+      "timestamp": 1631460633245,
+      "concept": "Working on Holiday Road group project",
+      "entry": "I'm feeling inspired and energized today! I'm really enjoying learning all the ways javascript powers our project and I love figuring out a way to solve the challenges this assignment presents. New things I've learned from googling this weekend: modal pop-ups, hiding elements until needed, more about flex properties, APIs, and I got a little more clarity on ERD's by helping a fellow student. Overall, great weekend! Excited for the week ahead.",
+      "mood": "Excited",
       "userId": "333"
     }
   ],

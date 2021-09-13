@@ -176,7 +176,7 @@ ul li:before {
     width: 450px; /* match fieldset */
     margin: 10px 0px;
     text-align: left;
-    padding: 20px;
+    padding: 20px 30px;
     background-color: #f9e5e3;
     border: 3px solid #BB7F8A;
     border-radius: 10px;
@@ -206,7 +206,7 @@ ul li:before {
     margin: 0px;
 }
 
-.mood-style {
+.mood {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
