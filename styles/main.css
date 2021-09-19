@@ -1,3 +1,13 @@
+@import "modal.css";
+
+/* Page colors are:
+#BB7F8A - dark pink
+#EED5D2 - light pink
+#f9e5e3 - journal entry bg
+light bg - mistyrose
+rgb(68, 68, 68) - gray (headlines)
+*/
+
 body {
     font-family: 'Poppins', sans-serif;
     padding: 0px;
@@ -48,17 +58,42 @@ header {
 main {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
     background-color: white;
-    padding-top: 15px;
+    padding: 15px 30px 20px;
+}
+
+.main__spacer {
+    background-color: rgb(255, 246, 245);
+    max-width: 550px;
+    max-height: 900px;
+    padding: 10px 30px 10px;
+    margin: 15px 20px;
+    border-radius: 20px;
+    border: 1px solid mistyrose;
 }
 
 .main__col1 {
-    flex: 30%;
+    flex: 1;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    margin-left: 55px;
+    justify-content: center;
+}
+
+.main__col2 {
+    flex: 1;
+    min-width: 400px;
+    text-align: center;
+}
+
+.main__col3 {
+    flex: 1;
+    min-width: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    overflow-y: auto;
 }
 
 .input__form {
@@ -170,13 +205,6 @@ ul li:before {
     margin: 0px 20px; /* the left right margin creates space after emoji */
 }
 
-.main__col2 {
-    flex: 35%;
-    margin: 0px auto;
-    min-width: 400px;
-    text-align: center;
-}
-
 .main__col2 h2 {
     color: rgb(68, 68, 68);
     font-weight: 600;
@@ -199,14 +227,6 @@ ul li:before {
     margin: 0px auto;
     width: 496px; /* match .btn-record & .footer  */
     border-top: 3px solid #BB7F8A; /* creates pink line */
-}
-
-.main__col3 {
-    flex: 30%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 50px;
 }
 
 .entries__list {
@@ -305,6 +325,7 @@ footer {
     padding: 0px;
     margin: 0px;
     text-align: center;
+    border-top: 3px solid #BB7F8A;
 }
 
 .footer {

@@ -26,7 +26,7 @@ startJournal();
 
 const applicationElement = document.getElementById("entryLog");
 
-console.log("appElement value is: ", applicationElement);
+// console.log("appElement value is: ", applicationElement);
 
 applicationElement.addEventListener("click", (event) => {
         const splitId = parseInt(event.target.id.split("--")[1]);
@@ -37,53 +37,52 @@ applicationElement.addEventListener("click", (event) => {
         } else {
             console.log("failed, splitId is - " + splitId)
         }
-
-
-	// if (event.target.id.startsWith("entry--")){
-        
-    //     let postBg = event.target.id.split("--")[1];
-    //     postBg = postBg.toString();
-    //     console.log("your clicked on post number ", event.target.id.split("--")[1])
-	// 	alert("You clicked on post number " + postBg)
-    // } else if (event.target.id === "date") {
-    //     let postDate = event.path[1].id.split("--")[1];
-    //     postDate = postDate.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postDate)
-	// } else if (event.target.id === "concept") {
-    //     let postConcept = event.path[1].id.split("--")[1];
-    //     postConcept = postConcept.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postConcept)
-	// } else if (event.target.id === "entry") {
-    //     let postEntry = event.path[1].id.split("--")[1];
-    //     postEntry = postEntry.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postEntry)
-	// } else if (event.target.id === "mood1" || event.target.id === "mood2") {
-    //     let postMood = event.path[2].id.split("--")[1];
-    //     postMood = postMood.toString();
-    //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-    //     alert("You clicked on post number " + postMood)
-    //  } // else if (event.target.id === "mood2") {
-    // //     let postMood2 = event.path[2].id.split("--")[1];
-    // //     postMood2 = postMood2.toString();
-    // //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-    // //     alert("You clicked on post number " + postMood2)
-    // // } 
 })
 
+const formNotFilledPopUp = () => {
+    console.log("formNotFilledPopUp is executing");
+    const formModalPopup = document.getElementById("modal");
+    formModalPopup.innerHTML = `
+    <div class="modal__content">
+        <span id="close-modal" class="close-modal">&times;</span>
+        <h2>Please Fill Out All Fields In Form To Submit</h2>
 
-// if (event.target.id.startsWith("edit")){
-//     console.log("post clicked to edit", event.target.id.split("--"))
-//     console.log("the id is", event.target.id.split("--")[1])
+        <div class="modal__content--not-filled">
+            <img src="./images/fillform.jpg" alt="Please Fill Out All Fields"/>
+        </div> <!-- closes modal__content--not-filled -->
+    </div> <!-- closes modal__content -->
+    `;
+    modal.style.display = "block";
+};
 
-/* <button id="1" onClick="reply_click(this.id)">B1</button> */
-/* <button id="2" onClick="reply_click(this.id)">B2</button> */
-/* <button id="3" onClick="reply_click(this.id)">B3</button> */
+const validateForm = () => {
+    var a = document.forms["form"]["journalDate"].value;
+    console.log("journalDate variable a is: " + a);
+    var b = document.forms["form"]["concepts"].value;
+    console.log("Title variable b is: " + b);
+    var c = document.forms["form"]["journalEntry"].value;
+    console.log("journalEntry variable c is: " + c);
+    if (a == "" || b == "" || c == "") {
+        // console.log("abc evaluated as at least one empty string and were saved as: " + a + " and " + b + " and " + c)
+        return false;
+    } else {
+        // console.log("abc evaluated as no empty strings and was saved as: " + a + " and " + b + " and " + c)
+        return true;
+      }
+}
 
-/* <script type="text/javascript">
-function reply_click(clicked_id)
-{
-    alert(clicked_id);
-} */
+const formButton = document.getElementById("button");
+// console.log("formButton is: " + formButton);
+
+formButton.addEventListener("click", (event) => {
+    console.log("You clicked button and event is: " + event);
+	const returnedValOfValidateForm = validateForm();
+    console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
+    if(returnedValOfValidateForm) {
+        console.log("Add Event Listener worked and validateForm returned true");
+        // run a function here
+    } else {
+        console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+        formNotFilledPopUp();
+    }
+});
