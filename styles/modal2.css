@@ -3,7 +3,7 @@
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 300px; 
+  /* padding-top: 300px;  */
   /* Location of the box */
   left: 0;
   top: 0;
@@ -17,13 +17,13 @@
 
 /* Modal Content */
 .modal-content {
-  margin: auto;
-  padding: 0px 50px 20px 50px;
+  /* margin: auto; */
+  /* padding: 10px 100px 30px 100px; */
   background-color: #EED5D2;
   border: 3px solid #BB7F8A;
   border-radius: 20px;
-  width: 60%; /* how much page to take up */
-  /* height: 300px; */
+  width: 300px; /* how much page to take up */
+  height: 300px;
 }
   
 .modal-content h2 {
@@ -50,11 +50,7 @@
   text-decoration: none;
   cursor: pointer;
 }
- 
-.modal__content--not-filled {
-  text-align: center;
-}
 
 .modal__content--not-filled img {
-  width: 200px;
+  width: 100px;
 }

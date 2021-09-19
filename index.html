@@ -27,111 +27,116 @@
       </div> <!-- closes header__col3 -->
     </header>
 
-    <main>
-      <div id="modal" class="modal">
-        <!-- popup modal placeholder -->
-      </div> <!-- closes modal -->
+<main>
 
-      <div class="main__col1 main__spacer">
-
-        <section class="input__form">
-
-          <h2>Add A Journal Entry</h2>
-
-          <form id="form" method="post" name="form" action="">
-
-            <fieldset>
-
-              <div class="label">
-                <label for="journalDate">Date of Entry</label>
-                </div> <!-- closes label -->
-              <div class="input">
-                <input type="date" name="journalDate" id="journalDate" value="">
-              </div> <!-- closes input -->
-
-              <div class="label">
-                <label for="concepts">Title</label>
-              </div> <!-- closes label -->
-              <div class="input">
-                <input type="text" name="concepts" id="concepts" placeholder="Type concept here" value="">
-              </div> <!-- closes input -->
-
-              <div class="label">
-                <label for="journalEntry">Journal Entry</label>
-                </div> <!-- closes label -->
-              <div class="input">
-                <textarea name="journalEntry" id="journalEntry" placeholder="Write something here" value=""></textarea>
-              </div> <!-- closes input -->
-
-              <div class="mood__label">
-                <label for="mood">Mood For The Day</label>
-              </div> <!-- closes label -->
-              <div class="mood__input">
-                <select id="mood" name="mood" value="">
-                  <option value="happy">&nbsp; 😃 &nbsp; Happy</option>
-                  <option value="grateful">&nbsp; 🙏🏻 &nbsp; Grateful</option>
-                  <option value="inspired">&nbsp; 🤩 &nbsp; Inspired</option>
-                  <option value="inspired">&nbsp; 🤗 &nbsp; Excited</option>
-                  <option value="content">&nbsp; 🥰 &nbsp; Content</option>
-                  <option value="tired">&nbsp; 🥱 &nbsp; Tired</option>
-                  <option value="sad">&nbsp; 😥 &nbsp; Sad</option>
-                  <option value="deflated">&nbsp; 😔 &nbsp; Deflated</option>
-                  <option value="deflated">&nbsp; 🤢 &nbsp; Unwell</option>
-                </select>
-              </div> <!-- closes input -->
-              <!-- <button type="button" onclick="return validateForm">Click Me!</button> -->
-              <!-- <input type="submit" value="Submit"> -->
-              <!-- <button class="btn__record">Record Journal Entry</button> -->
-
-            </fieldset>
-
-            <button id="button" class="btn__record">Record Journal Entry</button>
-
-          </form>
-
-        </section> <!-- closes input-form -->
-
-      </div> <!-- closes main__col1 -->
-
-    <!-- <div class="line"></div> -->
-    <!-- creates horizontal line -->
-
-      <div class="main__col2 main__spacer">
-
-        <h2>Recent Entries</h2>
-
-        <section class="entry__list">
-          <ul> 
-            <li><a href="#">Journal Entry Headline Here</a></li>
-            <li><a href="#">Journal Entry Headline Here</a></li>
-            <li><a href="#">Journal Entry Headline Here</a></li>
-            <li><a href="#">Journal Entry Headline Here</a></li>
-            <li><a href="#">Journal Entry Headline Here</a></li>
-          </ul>
-        </section> <!-- closes entry__list -->
-
-      </div> <!-- closes main__col2 -->
-
-      <div class="main__col3 main__spacer">
-
-      <!-- <div class="line"></div> -->
-      <!-- creates horizontal line -->
-
-        <div class="entries__list">
-          <h2>All Journal Entries</h2>
-
-          <div id="entryLog" class="post__list">
-            <!-- HTML rendered from post.js (json data)-->
-          </div> <!-- closes post__list-->
-
-        </div> <!-- closes entries__list -->
-
-      </div> <!-- closes main__col3 -->
-
-    <!-- <div class="line"></div> -->
-    <!-- creates horizontal line -->
+  <div class="main__col1 main__spacer">
   
-    </main>
+    <section class="input__form">
+
+      <h2>Add A Journal Entry</h2>
+
+      <form id="form" method="post" name="form" action="">
+
+        <fieldset>
+
+          <div class="label">
+            <label for="journalDate">Date of Entry</label>
+            </div> <!-- closes label -->
+          <div class="input">
+            <input type="date" name="journalDate" id="journalDate" value="">
+          </div> <!-- closes input -->
+
+          <div class="label">
+            <label for="concepts">Title</label>
+          </div> <!-- closes label -->
+          <div class="input">
+            <input type="text" name="concepts" id="concepts" placeholder="Type concept here" value="">
+          </div> <!-- closes input -->
+
+          <div class="label">
+            <label for="journalEntry">Journal Entry</label>
+            </div> <!-- closes label -->
+          <div class="input">
+            <textarea name="journalEntry" id="journalEntry" placeholder="Write something here" value=""></textarea>
+          </div> <!-- closes input -->
+
+          <div class="mood__label">
+            <label for="mood">Mood For The Day</label>
+          </div> <!-- closes label -->
+          <div class="mood__input">
+            <select id="mood" name="mood" value="">
+              <option value="happy">&nbsp; 😃 &nbsp; Happy</option>
+              <option value="grateful">&nbsp; 🙏🏻 &nbsp; Grateful</option>
+              <option value="inspired">&nbsp; 🤩 &nbsp; Inspired</option>
+              <option value="inspired">&nbsp; 🤗 &nbsp; Excited</option>
+              <option value="content">&nbsp; 🥰 &nbsp; Content</option>
+              <option value="tired">&nbsp; 🥱 &nbsp; Tired</option>
+              <option value="sad">&nbsp; 😥 &nbsp; Sad</option>
+              <option value="deflated">&nbsp; 😔 &nbsp; Deflated</option>
+              <option value="deflated">&nbsp; 🤢 &nbsp; Unwell</option>
+            </select>
+          </div> <!-- closes input -->
+
+        </fieldset>
+
+        <!-- <button id="btnId" class="btn__record">Record Journal Entry</button> -->
+
+      </form>
+
+      <button id="btnId" class="btn__record">Record Journal Entry</button>
+
+    </section> <!-- closes input-form -->
+
+  </div> <!-- closes main__col1 main__spacer -->
+
+  <div class="main__col2 main__spacer">
+
+    <h2>Recent Entries</h2>
+
+    <section class="entry__list">
+      <ul> 
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+        <li><a href="#">Journal Entry Headline Here</a></li>
+      </ul>
+    </section> <!-- closes entry__list -->
+
+  </div> <!-- closes main__col2 -->
+
+  <div class="main__col3 main__spacer">
+
+    <div class="entries__list">
+      <h2>All Journal Entries</h2>
+
+      <div id="entryLog" class="post__list">
+        <!-- HTML rendered from post.js (json data)-->
+      </div> <!-- closes post__list-->
+
+    </div> <!-- closes entries__list -->
+
+  </div> <!-- closes main__col3 -->
+
+  
+  <div id="modalId" class="modalClass">
+  <!-- popup modal placeholder -->
+
+    <div class="modal-content">
+
+      <span id="close-modal" class="close-modal">&times;</span>
+
+      <h2>Please Fill Out All Fields In Form To Submit</h2>
+
+      <div class="modal__content--not-filled">
+          <img src="./images/fillform.jpg" alt="Please Fill Out All Fields"/>
+      </div> <!-- closes modal__content--not-filled -->
+
+    </div> <!-- closes modal__content -->
+
+  </div> <!-- closes modalId and modalClass -->
+
+</main>
 
     <footer>
       <div class="footer">
