@@ -7,7 +7,7 @@ import { getPosts } from "./dataManager.js"
 
 
 const showPostList = () => {
-	const postElement = document.querySelector(".post-list");
+	const postElement = document.querySelector(".post__list");
 	getPosts().then((allPosts) => {
 		postElement.innerHTML = postList(allPosts);
 	})
@@ -29,37 +29,48 @@ const applicationElement = document.getElementById("entryLog");
 console.log("appElement value is: ", applicationElement);
 
 applicationElement.addEventListener("click", (event) => {
-	if (event.target.id.startsWith("entry--")){
-        let postBg = event.target.id.split("--")[1];
-        postBg = postBg.toString();
-        console.log("your clicked on post number ", event.target.id.split("--")[1])
-		alert("You clicked on post number " + postBg)
-    } else if (event.target.id === "date") {
-        let postDate = event.path[1].id.split("--")[1];
-        postDate = postDate.toString();
-        console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-        alert("You clicked on post number " + postDate)
-	} else if (event.target.id === "concept") {
-        let postConcept = event.path[1].id.split("--")[1];
-        postConcept = postConcept.toString();
-        console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-        alert("You clicked on post number " + postConcept)
-	} else if (event.target.id === "entry") {
-        let postEntry = event.path[1].id.split("--")[1];
-        postEntry = postEntry.toString();
-        console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-        alert("You clicked on post number " + postEntry)
-	} else if (event.target.id === "mood1" || event.target.id === "mood2") {
-        let postMood = event.path[2].id.split("--")[1];
-        postMood = postMood.toString();
-        console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-        alert("You clicked on post number " + postMood)
-     } // else if (event.target.id === "mood2") {
-    //     let postMood2 = event.path[2].id.split("--")[1];
-    //     postMood2 = postMood2.toString();
+        const splitId = parseInt(event.target.id.split("--")[1]);
+        const strSplitId = splitId.toString();
+        if (splitId) {
+            console.log(splitId)
+            alert("You clicked on post number " + strSplitId)
+        } else {
+            console.log("failed, splitId is - " + splitId)
+        }
+
+
+	// if (event.target.id.startsWith("entry--")){
+        
+    //     let postBg = event.target.id.split("--")[1];
+    //     postBg = postBg.toString();
+    //     console.log("your clicked on post number ", event.target.id.split("--")[1])
+	// 	alert("You clicked on post number " + postBg)
+    // } else if (event.target.id === "date") {
+    //     let postDate = event.path[1].id.split("--")[1];
+    //     postDate = postDate.toString();
+    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
+    //     alert("You clicked on post number " + postDate)
+	// } else if (event.target.id === "concept") {
+    //     let postConcept = event.path[1].id.split("--")[1];
+    //     postConcept = postConcept.toString();
+    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
+    //     alert("You clicked on post number " + postConcept)
+	// } else if (event.target.id === "entry") {
+    //     let postEntry = event.path[1].id.split("--")[1];
+    //     postEntry = postEntry.toString();
+    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
+    //     alert("You clicked on post number " + postEntry)
+	// } else if (event.target.id === "mood1" || event.target.id === "mood2") {
+    //     let postMood = event.path[2].id.split("--")[1];
+    //     postMood = postMood.toString();
     //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-    //     alert("You clicked on post number " + postMood2)
-    // } 
+    //     alert("You clicked on post number " + postMood)
+    //  } // else if (event.target.id === "mood2") {
+    // //     let postMood2 = event.path[2].id.split("--")[1];
+    // //     postMood2 = postMood2.toString();
+    // //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
+    // //     alert("You clicked on post number " + postMood2)
+    // // } 
 })
 
 
