@@ -2,38 +2,74 @@ body {
     font-family: 'Poppins', sans-serif;
     padding: 0px;
     margin: 0px;
-    /* background-image: url("../images/spanishtile.png");
-    background-repeat: repeat; */
 }
 
 header {
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
     background-color: white;
+    border-bottom: 3px solid #BB7F8A;
+}
+
+.header__col1 {
+    flex: 1;
 }
 
 /* logo */
-header img {
+.header__col1 img {
     width: 225px;
-    padding-top: 20px;
+    padding-top: 10px;
+    padding-left: 50px;
+}
+
+.header__col2 {
+    flex: 3;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.header__col2 h2 {
+    flex: 1;
+    font-size: 60px;
+    padding-right: 20px;
+    margin: auto auto;
+}
+
+.header__col3 {
+    flex: 1;
 }
 
 /* set main as flexbox so horizontal lines on page would center  */
 main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: white;
 }
 
-.input-form {
+.main__col1 {
+    flex: 30%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-left: 50px;
 }
 
-.input-form h2 {
-    font-size: 34px;
-    text-align: center;
+.input__form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.input__form h2 {
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 0px auto;
 }
 
 /* pink form body */
@@ -46,7 +82,7 @@ fieldset {
     background-color: #EED5D2;
     border: 3px solid #BB7F8A;
     border-radius: 10px;
-    margin: 0px auto;
+    margin: 30px auto 0px;
 }
 
 /* first 3 labels in form */
@@ -56,7 +92,7 @@ fieldset {
 }
 
 /* last label in form - separated from label class because label created uneven vertical spacing */
-.mood-label {
+.mood__label {
     padding: 0px;
     margin: 0px;
 }
@@ -100,23 +136,11 @@ fieldset {
 
 }
 
-/* .mood-input {
-    position: relative;
-  }
-  
-.mood-input::after {
-    content: "▼ ";
-    font-size: 1rem;
-    top: 6px;
-    right: 10px;
-    position: absolute;
-} */
-
 /* Record Journal Entry button */
-.btn-record {
+.btn__record {
     width: 496px; /* match .footer & .line */
     padding: 10px;
-    margin: 10px 0px 30px 0px;
+    margin: 10px 0px 30px;
     font-size: 22px;
     background-color: #d7a9b2;
     border: 3px solid #BB7F8A;
@@ -125,15 +149,16 @@ fieldset {
 }
 
 /* starts list of journal entries */
-.entry-list {
-    font-size: 22px;
-    padding: 30px 0px;
+.entry__list {
+    font-size: 32px;
+    padding-left: 26px;
     text-align: center;
 }
-.entry-list ul {
+.entry__list ul {
     list-style-type: none;
     padding: 0px;
     margin-left: -50px; /* reduces indent of list  */
+    margin-right: 0px;
 }
 
 ul li:before {
@@ -141,7 +166,21 @@ ul li:before {
     margin: 0px 20px; /* the left right margin creates space after emoji */
 }
 
-.entry-list a {
+.main__col2 {
+    flex: 35%;
+    margin: 0px auto;
+    min-width: 400px;
+    text-align: center;
+}
+
+.main__col2 h2 {
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 0px auto;
+}
+
+.entry__list a {
     font-size: 22px;
     color: #d7a9b2;
     padding: 0px;
@@ -155,6 +194,27 @@ ul li:before {
     margin: 0px auto;
     width: 496px; /* match .btn-record & .footer  */
     border-top: 3px solid #BB7F8A; /* creates pink line */
+}
+
+.main__col3 {
+    flex: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 50px;
+}
+
+.entries__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;    
+}
+
+.entries__list h2 {
+    font-weight: 600;
+    padding-top: 15px;
+    padding-bottom: 0px;
+    margin: 0px auto;
 }
 
 /* container that holds all journal entries */
@@ -173,7 +233,7 @@ ul li:before {
 /* starts journalEntry styling - this targets HTML rendered by JournalEntryComponent function in journalEntry.js  */
 .journalEntry {
     align-self: center;
-    width: 450px; /* match fieldset */
+    width: 400px; /* match fieldset */
     margin: 10px 0px;
     text-align: left;
     padding: 20px 30px;
@@ -182,7 +242,7 @@ ul li:before {
     border-radius: 10px;
 }
 
-.entry-date {
+.entry__date {
     font-size: 18px;
     font-weight: 600;
     color: black; 
@@ -190,7 +250,7 @@ ul li:before {
     margin-bottom: 10px;
 }
 
-.entry-concept {
+.entry__concept {
     font-size: 22px;
     font-weight: 600;
     color: #BB7F8A; 
@@ -198,7 +258,7 @@ ul li:before {
     margin: 0px;
 }
 
-.entry-entry {
+.entry__entry {
     font-size: 18px;
     font-weight: 300;
     color: black; 
@@ -212,7 +272,7 @@ ul li:before {
     flex-wrap: nowrap;
 }
 
-.entry-mood {
+.entry__mood {
     font-size: 18px;
     font-weight: 600;
     color: black;
@@ -220,7 +280,7 @@ ul li:before {
     margin: 0px;
 }
 
-.entry-mood__info {
+.entry__mood--info {
     font-size: 18px;
     font-weight: 400;
     color: black; 

@@ -3,3 +3,4 @@ export const formatDate = (obj) => {
     const formattedDate = dateStr.toDateString();
     return formattedDate;
 }
+

@@ -5,11 +5,11 @@ export const Post = (entryObj) => {
     return `
         <section id="entry--${entryObj.id}" class="journalEntry">
 
-            <div id="date--${entryObj.id}" class="entry-date">${pageDate}</div>
-            <h2 id="concept--${entryObj.id}" class="entry-concept">${entryObj.concept}</h2>
-            <div id="post--${entryObj.id}" class="entry-entry">${entryObj.entry}</div>
+            <div id="date--${entryObj.id}" class="entry__date">${pageDate}</div>
+            <h2 id="concept--${entryObj.id}" class="entry__concept">${entryObj.concept}</h2>
+            <div id="post--${entryObj.id}" class="entry__entry">${entryObj.entry}</div>
             <div id="mood--${entryObj.id}" class="mood">
-            <div id="mood1--${entryObj.id}" class="entry-mood">Mood:</div><div id="mood2--${entryObj.id}" class="entry-mood__info">${entryObj.mood}</div>
+            <div id="mood1--${entryObj.id}" class="entry__mood">Mood:</div><div id="mood2--${entryObj.id}" class="entry__mood--info">${entryObj.mood}</div>
             </div>
 
         </section>`

@@ -12,91 +12,126 @@
 
 <body>
 
-  <main>
-
     <header>
-      <img src="images/susieCodeslogo.png" alt="Susie's Journal Logo">
+      <div class="header__col1">
+        <img src="images/susieCodeslogo.png" alt="Susie's Journal Logo">
+      </div> <!-- closes header__col1 -->
+
+      <div class="header__col2">
+        <h2>Daily Journal</h2>
+      </div> <!-- closes header__col2 -->
+
+      <div class="header__col3">
+        <!-- put contact info icon here -->
+      </div> <!-- closes header__col3 -->
     </header>
 
-    <section class="input-form">
-      <h2>Daily Journal</h2>
-        <form method="post" action="example.php">
-          <fieldset>
+    <main>
 
-            <div class="label">
-              <label for="journalDate">Date of Entry</label>
+      <div class="main__col1">
+
+        <section class="input__form">
+
+          <h2>Add A Journal Entry</h2>
+
+          <form method="post" action="">
+
+            <fieldset>
+
+              <div class="label">
+                <label for="journalDate">Date of Entry</label>
+                </div> <!-- closes label -->
+              <div class="input">
+                <input type="date" name="journalDate" id="journalDate">
+              </div> <!-- closes input -->
+
+              <div class="label">
+                <label for="concepts">Concepts Covered</label>
               </div> <!-- closes label -->
-            <div class="input">
-              <input type="date" name="journalDate" id="journalDate">
-            </div> <!-- closes input -->
+              <div class="input">
+                <input type="text" name="concepts" id="concepts" placeholder="Type concept here">
+              </div> <!-- closes input -->
 
-            <div class="label">
-              <label for="concepts">Concepts Covered</label>
-            </div> <!-- closes label -->
-            <div class="input">
-              <input type="text" name="concepts" id="concepts" placeholder="Type concept here">
-            </div> <!-- closes input -->
+              <div class="label">
+                <label for="journalEntry">Journal Entry</label>
+                </div> <!-- closes label -->
+              <div class="input">
+                <textarea name="journalEntry" id="journalEntry" placeholder="Write something here"></textarea>
+              </div> <!-- closes input -->
 
-            <div class="label">
-              <label for="journalEntry">Journal Entry</label>
+              <div class="mood__label">
+                <label for="mood">Mood For The Day</label>
               </div> <!-- closes label -->
-            <div class="input">
-              <textarea name="journalEntry" id="journalEntry" placeholder="Write something here"></textarea>
-            </div> <!-- closes input -->
+              <div class="mood__input">
+                <select name="mood" id="mood">
+                  <option value="happy">&nbsp; 😃 &nbsp; Happy</option>
+                  <option value="grateful">&nbsp; 🙏🏻 &nbsp; Grateful</option>
+                  <option value="inspired">&nbsp; 🤩 &nbsp; Inspired</option>
+                  <option value="inspired">&nbsp; 🤗 &nbsp; Excited</option>
+                  <option value="content">&nbsp; 🥰 &nbsp; Content</option>
+                  <option value="tired">&nbsp; 🥱 &nbsp; Tired</option>
+                  <option value="sad">&nbsp; 😥 &nbsp; Sad</option>
+                  <option value="deflated">&nbsp; 😔 &nbsp; Deflated</option>
+                  <option value="deflated">&nbsp; 🤢 &nbsp; Unwell</option>
+                </select>
+              </div> <!-- closes input -->
 
-            <div class="mood-label">
-              <label for="mood">Mood For The Day</label>
-            </div> <!-- closes label -->
-            <div class="mood-input">
-              <select name="mood" id="mood">
-                <option value="happy">&nbsp; 😃 &nbsp; Happy</option>
-                <option value="grateful">&nbsp; 🙏🏻 &nbsp; Grateful</option>
-                <option value="inspired">&nbsp; 🤩 &nbsp; Inspired</option>
-                <option value="inspired">&nbsp; 🤗 &nbsp; Excited</option>
-                <option value="content">&nbsp; 🥰 &nbsp; Content</option>
-                <option value="tired">&nbsp; 🥱 &nbsp; Tired</option>
-                <option value="sad">&nbsp; 😥 &nbsp; Sad</option>
-                <option value="deflated">&nbsp; 😔 &nbsp; Deflated</option>
-                <option value="deflated">&nbsp; 🤢 &nbsp; Unwell</option>
-              </select>
-            </div> <!-- closes input -->
+            </fieldset>
+          </form>
 
-          </fieldset>
-        </form>
+          <button class="btn__record">Record Journal Entry</button>
 
-        <button class="btn-record">Record Journal Entry</button>
+        </section> <!-- closes input-form -->
 
-    </section> <!-- closes input-form -->
+      </div> <!-- closes main__col1 -->
 
-    <div class="line"></div> <!-- creates horizontal line -->
+    <!-- <div class="line"></div> -->
+    <!-- creates horizontal line -->
 
-    <section class="entry-list">
-      <ul> 
-        <li><a href="#">Journal Entry Headline Here</a></li>
-        <li><a href="#">Journal Entry Headline Here</a></li>
-        <li><a href="#">Journal Entry Headline Here</a></li>
-        <li><a href="#">Journal Entry Headline Here</a></li>
-        <li><a href="#">Journal Entry Headline Here</a></li>
-      </ul>
-    </section> <!-- closes entry-list -->
+      <div class="main__col2">
 
-    <div class="line"></div> <!-- creates horizontal line -->
+        <h2>Recent Entries</h2>
 
-    <div id="entryLog" class="post-list">
-      <!-- HTML rendered from post.js (json data)-->
-    </div> <!-- closes post-list-->
+        <section class="entry__list">
+          <ul> 
+            <li><a href="#">Journal Entry Headline Here</a></li>
+            <li><a href="#">Journal Entry Headline Here</a></li>
+            <li><a href="#">Journal Entry Headline Here</a></li>
+            <li><a href="#">Journal Entry Headline Here</a></li>
+            <li><a href="#">Journal Entry Headline Here</a></li>
+          </ul>
+        </section> <!-- closes entry__list -->
 
-    <div class="line"></div> <!-- creates horizontal line -->
+      </div> <!-- closes main__col2 -->
+
+      <div class="main__col3">
+
+      <!-- <div class="line"></div> -->
+      <!-- creates horizontal line -->
+
+        <div class="entries__list">
+          <h2>All Journal Entries</h2>
+
+          <div id="entryLog" class="post__list">
+            <!-- HTML rendered from post.js (json data)-->
+          </div> <!-- closes post-list-->
+
+        </div> <!-- closes entries__list -->
+
+      </div> <!-- closes main__col3 -->
+
+    <!-- <div class="line"></div> -->
+    <!-- creates horizontal line -->
   
-  </main>
+    </main>
 
-  <footer>
-    <div class="footer">
-    <p>Created by Susie Stanley<br>
-    <a class="github" href="https://github.com/SusieCodes" target="_blank">Visit My GitHub</a></p>
-    <p class="copyright">&copy;2021 All Rights Reserved</p>
-    </div> <!-- closes .footer-->
-  </footer>
+    <footer>
+      <div class="footer">
+      <p>Created by Susie Stanley<br>
+      <a class="github" href="https://github.com/SusieCodes" target="_blank">Visit My GitHub</a></p>
+      <p class="copyright">&copy;2021 All Rights Reserved</p>
+      </div> <!-- closes .footer-->
+    </footer>
 
   <script type="module" src="./scripts/main.js"></script>
 </body>

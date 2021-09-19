@@ -10,9 +10,9 @@ export const JournalEntryComponent = (entryObj) => {
     return `
         <section id="entry--${entryObj.id}" class="journalEntry">
 
-            <div class="entry-date">${pageDate}</div>
-            <h2 class="entry-concept">${entryObj.concept}</h2>
-            <div class="entry-entry">${entryObj.entry}</div>
+            <div class="entry__date">${pageDate}</div>
+            <h2 class="entry__concept">${entryObj.concept}</h2>
+            <div class="entry__entry">${entryObj.entry}</div>
 
         </section>`
 }

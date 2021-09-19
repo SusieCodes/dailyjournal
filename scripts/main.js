@@ -7,7 +7,7 @@ import { getPosts } from "./dataManager.js"
 
 
 const showPostList = () => {
-	const postElement = document.querySelector(".post-list");
+	const postElement = document.querySelector(".post__list");
 	getPosts().then((allPosts) => {
 		postElement.innerHTML = postList(allPosts);
 	})
