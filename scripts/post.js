@@ -12,6 +12,8 @@ export const Post = (entryObj) => {
             <div id="mood1--${entryObj.id}" class="entry__mood">Mood:</div><div id="mood2--${entryObj.id}" class="entry__mood--info">${entryObj.mood}</div>
             </div>
 
-        </section>`
+        </section>
+        `
   }
 
+  

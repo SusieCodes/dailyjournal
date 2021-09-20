@@ -14,5 +14,10 @@ export const JournalEntryComponent = (entryObj) => {
             <h2 class="entry__concept">${entryObj.concept}</h2>
             <div class="entry__entry">${entryObj.entry}</div>
 
+            <div class="new-entry-btns">
+            <button id="new-post__submit" class="post-submit">SAVE</button>
+            <button id="new-post__cancel" class="post-cancel">CANCEL</button>
+        </div> <!-- closes new-entry-btns -->
+
         </section>`
 }

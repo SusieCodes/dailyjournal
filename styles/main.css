@@ -67,7 +67,7 @@ main {
 .main__spacer {
     background-color: rgb(255, 246, 245);
     max-width: 550px;
-    max-height: 900px;
+    max-height: 625px;
     padding: 10px 30px 10px;
     margin: 15px 20px;
     border-radius: 20px;
@@ -174,11 +174,32 @@ fieldset {
 
 }
 
+/* div around record and cancel buttons */
+.bothBtns {
+    margin: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* Record Journal Entry button */
 .btn__record {
     width: 496px; /* match .footer & .line */
     padding: 10px;
-    margin: 15px 0px 30px;
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: #d7a9b2;
+    border: 3px solid #BB7F8A;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.btn__cancel {
+    width: 496px; /* match .footer & .line */
+    padding: 10px;
+    margin: 15px 0px;;
     font-size: 22px;
     font-weight: 600;
     background-color: #d7a9b2;
@@ -313,6 +334,36 @@ ul li:before {
     color: black; 
     padding: 0px;
     margin: 0px;
+}
+
+.new-entry-btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.post-submit {
+    font-size: 16px;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: black;
+    background-color: #e6afba;
+    border: 3px solid #BB7F8A;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 15px 5px 0px 5px;
+}
+
+.post-cancel {
+    font-size: 16px;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: black;
+    background-color: #e6afba;
+    border: 3px solid #BB7F8A;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 15px 5px 0px 5px;
 }
 
 /* ends journalEntry styling  */

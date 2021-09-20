@@ -29,6 +29,22 @@
       "entry": "I'm feeling inspired and energized today! I'm really enjoying learning all the ways javascript powers our project and I love figuring out a way to solve the challenges this assignment presents. New things I've learned from googling this weekend: modal pop-ups, hiding elements until needed, more about flex properties, APIs, and I got a little more clarity on ERD's by helping a fellow student. Overall, great weekend! Excited for the week ahead.",
       "mood": "Excited",
       "userId": "333"
+    },
+    {
+      "timestamp": "2021-09-20",
+      "concept": "This Is Working!",
+      "entry": "Now I just have to figure out how to reset these values after I hit submit LOL... I'll tackle it tomorrow because it's late and I have school tomorrow morning. Goodnight!",
+      "mood": "Content",
+      "userId": 333,
+      "id": 3
+    },
+    {
+      "timestamp": "2021-09-21",
+      "concept": "Last One Before Bed",
+      "entry": "One more to see if mood is capitalized or not : )",
+      "mood": "Tired",
+      "userId": 333,
+      "id": 4
     }
   ],
   "moods": []

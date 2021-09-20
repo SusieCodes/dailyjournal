@@ -1,6 +1,7 @@
-import { postList } from "./postList.js" 
-import { getPosts } from "./dataManager.js"
-import { notFilledInsert } from "./modal.js"
+import { postList } from "./postList.js";
+import { getPosts } from "./dataManager.js";
+import { notFilledInsert } from "./modal.js";
+import { createPost } from "./dataManager.js";
 
 
 const showPostList = () => {
@@ -45,7 +46,7 @@ savedLocOfModalId.innerHTML = notFilledInsert();
 // console.log("savedLocOfModalId is saved as: " + savedLocOfModalId);
 
 // Get the button that opens modal
-const btn = document.getElementById("btnId");
+const bothBtns = document.getElementById("btnId");
 
 const span = document.getElementById("close-modal");
 
@@ -91,34 +92,57 @@ window.onclick = function(event) {
 //     savedLocOfModalId.style.display = "none";
 // }
 
-btn.addEventListener("click", (event) => {
-    console.log("You clicked button and event is: " + event);
-	const returnedValOfValidateForm = validateForm();
-    console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
+// btn.addEventListener("click", (event) => {
+//     console.log("You clicked button and event is: " + event);
+// 	const returnedValOfValidateForm = validateForm();
+//     console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
 
-    if(returnedValOfValidateForm) {
-        console.log("Add Event Listener worked and validateForm returned true");
+//     if(returnedValOfValidateForm) {
+//         console.log("AddEventListener worked and validateForm returned true");
         // run a function here
-    } else {
-        console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
-        formNotFilledPopUp();
+    // } else {
+    //     console.log("AddEventListener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+    //     formNotFilledPopUp();
         // Get the <span> element that closes the modal
         // const span = document.getElementById("close-modal");
         // console.log("span is saved as: " + span);
         // span.addEventListener("click", closeModal());
         // savedLocOfModalId.addEventListener("click", closeModal());
-    }
-});
-
-// span.addEventListener("click", (event) => {
-//     console.log("You clicked the X and event is: " + event);
-//     savedLocOfModalId.style.display = "none";    
+//     }
 // });
 
-
-// if (event.target == "close-modal") {
-//     savedLocOfModalId.style.display = "none";
-// }
-// if (event.target == savedLocOfModalId){
-//     savedLocOfModalId.style.display = "none";
-// }
+// const btnElements = document.getElementById("new-entry-btns");
+  
+bothBtns.addEventListener("click", event => {
+event.preventDefault();
+if (event.target.id === "btnId") {
+    console.log("you clicked btnId")
+    const returnedValOfValidateForm = validateForm();
+    if(returnedValOfValidateForm) {
+        console.log("AddEventListener worked and validateForm returned true");
+    const theDate = document.querySelector("input[name='journalDate']").value
+    const title = document.querySelector("input[name='concepts']").value
+    const myEntry = document.querySelector("textarea[name='journalEntry']").value
+    const myMood = document.querySelector("select[name='mood']").value
+    //we haven't created a user yet - for now, I'll hard code `333`.
+    const postObject = {
+        // timestamp: Date.now(), we are using date picker
+        timestamp: theDate,
+        concept: title,
+        entry: myEntry,
+        mood: myMood,
+        userId: 333,
+    }
+    createPost(postObject).then(dbResponse => {
+        showPostList();
+    })
+    }
+    else {
+        console.log("AddEventListener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+        formNotFilledPopUp();
+    }   
+} if (event.target.id === "cancelBtnId") {
+    console.log("you clicked cancelBtnId")
+    // showPostEntry(); write this function so journal entry form is added with function and not hard coded as it is currently
+    }
+});
