@@ -88,29 +88,6 @@ window.onclick = function(event) {
     }
 }
 
-// const closeModal = () => { 
-//     savedLocOfModalId.style.display = "none";
-// }
-
-// btn.addEventListener("click", (event) => {
-//     console.log("You clicked button and event is: " + event);
-// 	const returnedValOfValidateForm = validateForm();
-//     console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
-
-//     if(returnedValOfValidateForm) {
-//         console.log("AddEventListener worked and validateForm returned true");
-        // run a function here
-    // } else {
-    //     console.log("AddEventListener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
-    //     formNotFilledPopUp();
-        // Get the <span> element that closes the modal
-        // const span = document.getElementById("close-modal");
-        // console.log("span is saved as: " + span);
-        // span.addEventListener("click", closeModal());
-        // savedLocOfModalId.addEventListener("click", closeModal());
-//     }
-// });
-
 // const btnElements = document.getElementById("new-entry-btns");
   
 bothBtns.addEventListener("click", event => {

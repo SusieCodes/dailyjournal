@@ -17,6 +17,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     text-align: left;
     background-color: white;
     border-bottom: 3px solid #BB7F8A;
@@ -52,6 +53,16 @@ header {
 
 .header__col3 {
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.header__col3 img {
+    width: 250px;
+    align-self: flex-end;
+    margin-right: 30px;
 }
 
 /* set main as flexbox so horizontal lines on page would center  */
