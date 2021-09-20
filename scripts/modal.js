@@ -1,15 +1,18 @@
 export const notFilledInsert = () => {
+  console.log("notFilledInsert has executed");
   return `
-    <div class="modal__content">
+    <div class="modal-content">
 
         <span id="close-modal" class="close-modal">&times;</span>
 
-        <h2>Please Fill Out All Fields In Form To Submit</h2>
+        <div class="modal-alert">
+        <h2>Please Fill Out All Information On Form Before Submitting</h2>
+        </div> <!-- closes modal-alert -->
 
         <div class="modal__content--not-filled">
-            <img src="./images/fillform.jpg" alt="Please Fill Out All Fields"/>
+            <img src="./images/formnotfilled.png" alt="Please Fill Out All Info Before Submitting"/>
         </div> <!-- closes modal__content--not-filled -->
 
-    </div> <!-- closes modal__content -->
+    </div> <!-- closes modal-content -->
 `;
 };

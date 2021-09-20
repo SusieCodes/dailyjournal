@@ -178,7 +178,7 @@ fieldset {
 .btn__record {
     width: 496px; /* match .footer & .line */
     padding: 10px;
-    margin: 10px 0px 30px;
+    margin: 15px 0px 30px;
     font-size: 22px;
     font-weight: 600;
     background-color: #d7a9b2;

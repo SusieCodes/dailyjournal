@@ -1,5 +1,5 @@
 /* The Modal (background) */
-.modalClass {
+.modal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -19,17 +19,23 @@
 .modal-content {
   margin: auto;
   padding: 0px 50px 20px 50px;
-  background-color: #EED5D2;
-  border: 3px solid #BB7F8A;
+  background-color: white;
+  border: 5px solid #BB7F8A;
   border-radius: 20px;
-  width: 60%; /* how much page to take up */
+  width: 500px; /* how much page to take up */
   /* height: 300px; */
 }
   
 .modal-content h2 {
+  font-weight: 400;
   text-align: center;
   padding: 0px;
   /* margin: 20px 0px; */
+}
+
+.modal-alert {
+  width: 350px;
+  margin: 0px auto;
 }
 
 /* The Close Buttons */

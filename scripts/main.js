@@ -16,7 +16,9 @@ const startJournal = () => {
 
 startJournal();
 
-
+// Get the modal location
+const savedLocOfModalId = document.getElementById("modalId");
+savedLocOfModalId.innerHTML = notFilledInsert();
 // const postClick = () => {
 //     console.log("You clicked on a journal entry ");
 // }
@@ -36,14 +38,21 @@ startJournal();
 //         }
 // })
 
-// const formModalPopUp = document.querySelector(".modal"); 
-// console.log("formModalPopup is saved as: " + formModalPopUp);
 
-// const formNotFilledPopUp = () => {
-//     console.log("formNotFilledPopUp is executing");
-//     formModalPopUp.innerHTML = notFilledInsert();
-//     modal.style.display = "block";
-// };
+// Get the modal location
+// const savedLocOfModalId = document.getElementById("modalId");
+// savedLocOfModalId.innerHTML = notFilledInsert();
+// console.log("savedLocOfModalId is saved as: " + savedLocOfModalId);
+
+// Get the button that opens modal
+const btn = document.getElementById("btnId");
+
+const span = document.getElementById("close-modal");
+
+const formNotFilledPopUp = () => {
+    console.log("formNotFilledPopUp is executing");
+    savedLocOfModalId.style.display = "block";
+};
 
 const validateForm = () => {
     var a = document.forms["form"]["journalDate"].value;
@@ -61,34 +70,10 @@ const validateForm = () => {
       }
 }
 
-// const btn = document.getElementById("btnId");
-
-// btn.addEventListener("click", (event) => {
-//     console.log("You clicked button and event is: " + event);
-// 	const returnedValOfValidateForm = validateForm();
-//     console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
-//     if(returnedValOfValidateForm) {
-//         console.log("Add Event Listener worked and validateForm returned true");
-//         // run a function here
-//     } else {
-//         console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
-//         // formNotFilledPopUp();
-//     }
-// });
-
-// Get the modal location
-const savedLocOfModalId = document.getElementById("modalId");
-
-// Get the button that opens modal
-const btn = document.getElementById("btnId");
-
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close-modal")[0];
-
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
-    savedLocOfModalId.style.display = "block";
-}
+// btn.onclick = function() {
+//     savedLocOfModalId.style.display = "block";
+// }
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -102,29 +87,38 @@ window.onclick = function(event) {
     }
 }
 
-
-// // Get the modal
-// var modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
-
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
+// const closeModal = () => { 
+//     savedLocOfModalId.style.display = "none";
 // }
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+btn.addEventListener("click", (event) => {
+    console.log("You clicked button and event is: " + event);
+	const returnedValOfValidateForm = validateForm();
+    console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
+    if(returnedValOfValidateForm) {
+        console.log("Add Event Listener worked and validateForm returned true");
+        // run a function here
+    } else {
+        console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+        formNotFilledPopUp();
+        // Get the <span> element that closes the modal
+        // const span = document.getElementById("close-modal");
+        // console.log("span is saved as: " + span);
+        // span.addEventListener("click", closeModal());
+        // savedLocOfModalId.addEventListener("click", closeModal());
+    }
+});
+
+// span.addEventListener("click", (event) => {
+//     console.log("You clicked the X and event is: " + event);
+//     savedLocOfModalId.style.display = "none";    
+// });
+
+
+// if (event.target == "close-modal") {
+//     savedLocOfModalId.style.display = "none";
+// }
+// if (event.target == savedLocOfModalId){
+//     savedLocOfModalId.style.display = "none";
 // }
