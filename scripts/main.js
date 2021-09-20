@@ -1,9 +1,6 @@
-// import { EntryListComponent } from "./journalEntryList.js"
-
-// EntryListComponent();
-
 import { postList } from "./postList.js" 
 import { getPosts } from "./dataManager.js"
+import { notFilledInsert } from "./modal.js"
 
 
 const showPostList = () => {
@@ -19,71 +16,109 @@ const startJournal = () => {
 
 startJournal();
 
-
+// Get the modal location
+const savedLocOfModalId = document.getElementById("modalId");
+savedLocOfModalId.innerHTML = notFilledInsert();
 // const postClick = () => {
 //     console.log("You clicked on a journal entry ");
 // }
 
-const applicationElement = document.getElementById("entryLog");
+// const applicationElement = document.getElementById("entryLog");
 
-console.log("appElement value is: ", applicationElement);
+// console.log("appElement value is: ", applicationElement);
 
-applicationElement.addEventListener("click", (event) => {
-        const splitId = parseInt(event.target.id.split("--")[1]);
-        const strSplitId = splitId.toString();
-        if (splitId) {
-            console.log(splitId)
-            alert("You clicked on post number " + strSplitId)
-        } else {
-            console.log("failed, splitId is - " + splitId)
-        }
-
-
-	// if (event.target.id.startsWith("entry--")){
-        
-    //     let postBg = event.target.id.split("--")[1];
-    //     postBg = postBg.toString();
-    //     console.log("your clicked on post number ", event.target.id.split("--")[1])
-	// 	alert("You clicked on post number " + postBg)
-    // } else if (event.target.id === "date") {
-    //     let postDate = event.path[1].id.split("--")[1];
-    //     postDate = postDate.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postDate)
-	// } else if (event.target.id === "concept") {
-    //     let postConcept = event.path[1].id.split("--")[1];
-    //     postConcept = postConcept.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postConcept)
-	// } else if (event.target.id === "entry") {
-    //     let postEntry = event.path[1].id.split("--")[1];
-    //     postEntry = postEntry.toString();
-    //     console.log("You clicked on post number ", event.path[1].id.split("--")[1])
-    //     alert("You clicked on post number " + postEntry)
-	// } else if (event.target.id === "mood1" || event.target.id === "mood2") {
-    //     let postMood = event.path[2].id.split("--")[1];
-    //     postMood = postMood.toString();
-    //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-    //     alert("You clicked on post number " + postMood)
-    //  } // else if (event.target.id === "mood2") {
-    // //     let postMood2 = event.path[2].id.split("--")[1];
-    // //     postMood2 = postMood2.toString();
-    // //     console.log("You clicked on post number ", event.path[2].id.split("--")[1])
-    // //     alert("You clicked on post number " + postMood2)
-    // // } 
-})
+// applicationElement.addEventListener("click", (event) => {
+//         const splitId = parseInt(event.target.id.split("--")[1]);
+//         const strSplitId = splitId.toString();
+//         if (splitId) {
+//             console.log(splitId)
+//             alert("You clicked on post number " + strSplitId)
+//         } else {
+//             console.log("failed, splitId is - " + splitId)
+//         }
+// })
 
 
-// if (event.target.id.startsWith("edit")){
-//     console.log("post clicked to edit", event.target.id.split("--"))
-//     console.log("the id is", event.target.id.split("--")[1])
+// Get the modal location
+// const savedLocOfModalId = document.getElementById("modalId");
+// savedLocOfModalId.innerHTML = notFilledInsert();
+// console.log("savedLocOfModalId is saved as: " + savedLocOfModalId);
 
-/* <button id="1" onClick="reply_click(this.id)">B1</button> */
-/* <button id="2" onClick="reply_click(this.id)">B2</button> */
-/* <button id="3" onClick="reply_click(this.id)">B3</button> */
+// Get the button that opens modal
+const btn = document.getElementById("btnId");
 
-/* <script type="text/javascript">
-function reply_click(clicked_id)
-{
-    alert(clicked_id);
-} */
+const span = document.getElementById("close-modal");
+
+const formNotFilledPopUp = () => {
+    console.log("formNotFilledPopUp is executing");
+    savedLocOfModalId.style.display = "block";
+};
+
+const validateForm = () => {
+    var a = document.forms["form"]["journalDate"].value;
+    console.log("journalDate variable a is: " + a);
+    var b = document.forms["form"]["concepts"].value;
+    console.log("Title variable b is: " + b);
+    var c = document.forms["form"]["journalEntry"].value;
+    console.log("journalEntry variable c is: " + c);
+    if (a == "" || b == "" || c == "") {
+        // console.log("abc evaluated as at least one empty string and were saved as: " + a + " and " + b + " and " + c)
+        return false;
+    } else {
+        // console.log("abc evaluated as no empty strings and was saved as: " + a + " and " + b + " and " + c)
+        return true;
+      }
+}
+
+// When the user clicks on the button, open the modal
+// btn.onclick = function() {
+//     savedLocOfModalId.style.display = "block";
+// }
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    savedLocOfModalId.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == savedLocOfModalId) {
+        savedLocOfModalId.style.display = "none";
+    }
+}
+
+// const closeModal = () => { 
+//     savedLocOfModalId.style.display = "none";
+// }
+
+btn.addEventListener("click", (event) => {
+    console.log("You clicked button and event is: " + event);
+	const returnedValOfValidateForm = validateForm();
+    console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
+
+    if(returnedValOfValidateForm) {
+        console.log("Add Event Listener worked and validateForm returned true");
+        // run a function here
+    } else {
+        console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+        formNotFilledPopUp();
+        // Get the <span> element that closes the modal
+        // const span = document.getElementById("close-modal");
+        // console.log("span is saved as: " + span);
+        // span.addEventListener("click", closeModal());
+        // savedLocOfModalId.addEventListener("click", closeModal());
+    }
+});
+
+// span.addEventListener("click", (event) => {
+//     console.log("You clicked the X and event is: " + event);
+//     savedLocOfModalId.style.display = "none";    
+// });
+
+
+// if (event.target == "close-modal") {
+//     savedLocOfModalId.style.display = "none";
+// }
+// if (event.target == savedLocOfModalId){
+//     savedLocOfModalId.style.display = "none";
+// }
