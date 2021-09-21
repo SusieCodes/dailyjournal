@@ -12,6 +12,11 @@ export const Post = (entryObj) => {
             <div id="mood1--${entryObj.id}" class="entry__mood">Mood:</div><div id="mood2--${entryObj.id}" class="entry__mood--info">${entryObj.mood}</div>
             </div>
 
+            <div id="postBtns" class="postBtns">
+            <button id="edit--${entryObj.id}" class="post-btn">EDIT</button>
+            <button id="delete--${entryObj.id}" class="post-btn">DELETE</button>
+            </div> <!-- closes postBtns -->
+
         </section>
         `
   }

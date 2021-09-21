@@ -15,12 +15,11 @@
   ],
   "posts": [
     {
-      "id": 1,
-      "timestamp": 1630401038389,
+      "timestamp": 1632200148441,
       "concept": "My First Practice Post",
       "entry": "This is my very first journal entry using JSON database",
-      "mood": "Inspired",
-      "userId": "333"
+      "mood": "Happy",
+      "id": 1
     },
     {
       "id": 2,
@@ -45,6 +44,83 @@
       "mood": "Tired",
       "userId": 333,
       "id": 4
+    },
+    {
+      "timestamp": "2021-09-20",
+      "concept": "Learned To Edit & Cancel",
+      "entry": "We learned how to add Edit, Cancel, and Update buttons to another project so I'm going to start playing with that tonight to add it here on my journal. ",
+      "mood": "Excited",
+      "userId": 333,
+      "id": 5
+    },
+    {
+      "timestamp": "2021-09-20",
+      "concept": "lets try",
+      "entry": "write something here",
+      "mood": "Inspired",
+      "userId": 333,
+      "id": 6
+    },
+    {
+      "timestamp": 1632193406087,
+      "concept": "test",
+      "entry": "try again",
+      "mood": "Inspired",
+      "userId": 333,
+      "id": 7
+    },
+    {
+      "timestamp": 1632193593641,
+      "concept": "testing testing",
+      "entry": "write something funny",
+      "mood": "Excited",
+      "userId": 333,
+      "id": 8
+    },
+    {
+      "timestamp": 1632193685825,
+      "concept": "testing testing",
+      "entry": "write something funny",
+      "mood": "Excited",
+      "userId": 333,
+      "id": 9
+    },
+    {
+      "timestamp": 1632193703556,
+      "concept": "testing again",
+      "entry": "lets try again",
+      "mood": "Tired",
+      "userId": 333,
+      "id": 10
+    },
+    {
+      "timestamp": 1632199226612,
+      "concept": "adding a test entry changing title",
+      "entry": "changed the entry to test it out",
+      "mood": "Content",
+      "id": 11
+    },
+    {
+      "timestamp": 1632201399350,
+      "concept": "Lets change another one",
+      "entry": "I'm having a hard time coming up with ideas of what to write",
+      "mood": "Happy",
+      "id": 12
+    },
+    {
+      "timestamp": 1632202571764,
+      "concept": "lets try this again",
+      "entry": "I'm tired and going to bed :)",
+      "mood": "Content",
+      "id": 13
+    },
+    {
+      "timestamp": 1632204955492,
+      "concept": "Cool beans",
+      "entry": "Lets try one last time",
+      "mood": "Excited",
+      "userId": 333,
+      "id": 14
     }
   ],
   "moods": []

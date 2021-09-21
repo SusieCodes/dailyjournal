@@ -13,3 +13,30 @@ export const createPost = postObj => {
         body: JSON.stringify(postObj)})
         .then(response => response.json())
 }
+
+export const deletePost = (postId) => {
+    console.log("postId being plugged into deletePost is: " + postId);
+  return fetch(`http://localhost:3333/posts/${postId}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+    }
+  })
+}
+
+export const getSinglePost = (postId) => {
+  return fetch(`http://localhost:3333/posts/${postId}`)
+    .then(response => response.json())
+}
+
+export const updatePost = postObj => {
+  return fetch(`http://localhost:3333/posts/${postObj.id}`, {
+      method: "PUT",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify(postObj)
+
+  })
+      .then(response => response.json())
+}
