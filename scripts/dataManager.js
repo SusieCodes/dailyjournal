@@ -40,3 +40,9 @@ export const updatePost = postObj => {
   })
       .then(response => response.json())
 }
+
+// let loggedInUser = {}
+
+// export const setLoggedInUser (userObj) => {
+//     loggedInUser = userObj;
+//   }

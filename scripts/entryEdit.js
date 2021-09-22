@@ -53,8 +53,8 @@ export const entryEdit = (entryObj) => {
         </form>
 
 		<div id="new-entry-btns" class="new-entry-btns">
-		<button id="updatePost__${entryObj.id}" class="post-submit">UPDATE</button>
-		<button id="post-cancel" class="post-cancel">CANCEL</button>
+		<button id="updatePost__${entryObj.id}" class="post-submit" type="button">UPDATE</button>
+		<button id="post-cancel" class="post-cancel" type="button">CANCEL</button>
 		</div> <!-- closes new-entry-btns -->
 
       </section> <!-- closes input-form -->

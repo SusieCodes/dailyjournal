@@ -4,6 +4,9 @@ import { notFilledInsert } from "./modal.js";
 import { entryEdit } from "./entryEdit.js";
 import { journalEntryForm } from "./journalEntry.js";
 
+
+const applicationElement = document.getElementById("main");
+
 // Get the entry form info to use with Event Listeners
 const entryElement = document.getElementById("entry-form");
 
@@ -81,7 +84,7 @@ window.onclick = function(event) {
   
 // Event listener for posting new entry or cancelling
 bothBtns.addEventListener("click", event => {
-event.preventDefault();
+// event.preventDefault();
 if (event.target.id === "btnId") {
     console.log("you clicked btnId")
     const returnedValOfValidateForm = validateForm();
@@ -110,11 +113,14 @@ if (event.target.id === "btnId") {
         formNotFilledPopUp();
     }   
 }
-if (event.target.id === "cancelBtnId") {
-    console.log("you clicked cancelBtnId")
-    showJournalEntryForm();
-    }
-});
+})
+
+applicationElement.addEventListener("click", (event) => {
+	if (event.target.id === "cancelBtnId") {
+		console.log("you clicked cancelBtnId");
+		showJournalEntryForm();
+	}
+})
 
 postElement.addEventListener("click", (event) => {
 	if (event.target.id.startsWith("edit")){
@@ -141,7 +147,7 @@ postElement.addEventListener("click", (event) => {
 const editElements = document.querySelector(".input__form");
 
 editElements.addEventListener("click", event => {
-    event.preventDefault();
+    // event.preventDefault();
     if (event.target.id.startsWith("updatePost")) {
         console.log("you clicked updatePost button")
       const postId = event.target.id.split("__")[1];
@@ -170,3 +176,8 @@ editElements.addEventListener("click", event => {
 		showJournalEntryForm();
 	}
   })
+
+  
+  
+  
+   

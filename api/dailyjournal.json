@@ -11,11 +11,17 @@
       "name": "Brenda",
       "dateJoined": "1630513838389",
       "email": "brenda@yahoo.com"
+    },
+    {
+      "id": "333",
+      "name": "Susie Q",
+      "dateJoined": "1630513838389",
+      "email": "susie@yahoo.com"
     }
   ],
   "posts": [
     {
-      "timestamp": 1632200148441,
+      "timestamp": "2021-09-11",
       "concept": "My First Practice Post",
       "entry": "This is my very first journal entry using JSON database",
       "mood": "Happy",
@@ -23,7 +29,7 @@
     },
     {
       "id": 2,
-      "timestamp": 1631460633245,
+      "timestamp": "2021-09-12",
       "concept": "Working on Holiday Road group project",
       "entry": "I'm feeling inspired and energized today! I'm really enjoying learning all the ways javascript powers our project and I love figuring out a way to solve the challenges this assignment presents. New things I've learned from googling this weekend: modal pop-ups, hiding elements until needed, more about flex properties, APIs, and I got a little more clarity on ERD's by helping a fellow student. Overall, great weekend! Excited for the week ahead.",
       "mood": "Excited",
@@ -38,7 +44,7 @@
       "id": 3
     },
     {
-      "timestamp": "2021-09-21",
+      "timestamp": "2021-09-20",
       "concept": "Last One Before Bed",
       "entry": "One more to see if mood is capitalized or not : )",
       "mood": "Tired",
@@ -46,7 +52,7 @@
       "id": 4
     },
     {
-      "timestamp": "2021-09-20",
+      "timestamp": "2021-09-21",
       "concept": "Learned To Edit & Cancel",
       "entry": "We learned how to add Edit, Cancel, and Update buttons to another project so I'm going to start playing with that tonight to add it here on my journal. ",
       "mood": "Excited",
@@ -54,7 +60,7 @@
       "id": 5
     },
     {
-      "timestamp": "2021-09-20",
+      "timestamp": "2021-09-21",
       "concept": "lets try",
       "entry": "write something here",
       "mood": "Inspired",
@@ -115,10 +121,10 @@
       "id": 13
     },
     {
-      "timestamp": 1632204955492,
-      "concept": "Cool beans",
-      "entry": "Lets try one last time",
-      "mood": "Excited",
+      "timestamp": 1632270589354,
+      "concept": "Deep Dive on Event Listeners",
+      "entry": "I learned a ton about event listeners over the last few days. I realized that depending on the scope of the project, you can set the listeners with a wide scope or a narrow scope depending on the context. I plan on looking over my code this week to see where I can consolidate my if statements and maybe try changing some to switch statements. It will be interesting. Wish me luck! haha",
+      "mood": "Inspired",
       "userId": 333,
       "id": 14
     }

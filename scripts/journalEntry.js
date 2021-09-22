@@ -24,12 +24,6 @@ export const journalEntryForm = (entryObj) => {
         </div> <!-- closes input -->
 
         <div class="label">
-            <div class="flex-date">
-                <div>Date of Entry: </div><div class="date-display">${todayFormatted}</div>
-            </div> <!-- closes flex-date-->
-        </div> <!-- closes label -->
-
-        <div class="label">
           <label for="concepts">Title</label>
         </div> <!-- closes label -->
         <div class="input">
@@ -66,9 +60,9 @@ export const journalEntryForm = (entryObj) => {
 
     <div id="bothBtns" class="bothBtns">
 
-      <button id="btnId" class="btn__record">RECORD ENTRY</button>
+      <button id="btnId" class="btn__record" type="button">RECORD ENTRY</button>
 
-      <button id="cancelBtnId" class="btn__cancel">CANCEL</button>
+      <button id="cancelBtnId" class="btn__cancel" type="button">CANCEL</button>
 
     </div> <!-- closes bothBtns -->
 
