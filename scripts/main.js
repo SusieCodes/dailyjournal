@@ -1,53 +1,40 @@
-import { postList } from "./postList.js" 
-import { getPosts } from "./dataManager.js"
-import { notFilledInsert } from "./modal.js"
+import { postList } from "./postList.js";
+import { getPosts, createPost, deletePost, getSinglePost, updatePost } from "./dataManager.js";
+import { notFilledInsert } from "./modal.js";
+import { entryEdit } from "./entryEdit.js";
+import { journalEntryForm } from "./journalEntry.js";
 
+
+const applicationElement = document.getElementById("main");
+
+// Get the entry form info to use with Event Listeners
+const entryElement = document.getElementById("entry-form");
+
+// Get the post list info to use with Event Listeners
+const postElement = document.querySelector(".post__list");
+
+const showJournalEntryForm = () => { 
+	console.log("showJournalEntryForm has executed");
+    entryElement.innerHTML = journalEntryForm();
+}
 
 const showPostList = () => {
-	const postElement = document.querySelector(".post__list");
-	getPosts().then((allPosts) => {
-		postElement.innerHTML = postList(allPosts);
+	console.log("showPostList executed");
+	getPosts().then((allEntries) => {
+		postElement.innerHTML = postList(allEntries);
 	})
 }
 
+const showEdit = (entryObj) => {
+    entryElement.innerHTML = entryEdit(entryObj);
+}
+
 const startJournal = () => {
+	showJournalEntryForm();
     showPostList();
 }
 
 startJournal();
-
-// Get the modal location
-const savedLocOfModalId = document.getElementById("modalId");
-savedLocOfModalId.innerHTML = notFilledInsert();
-// const postClick = () => {
-//     console.log("You clicked on a journal entry ");
-// }
-
-// const applicationElement = document.getElementById("entryLog");
-
-// console.log("appElement value is: ", applicationElement);
-
-// applicationElement.addEventListener("click", (event) => {
-//         const splitId = parseInt(event.target.id.split("--")[1]);
-//         const strSplitId = splitId.toString();
-//         if (splitId) {
-//             console.log(splitId)
-//             alert("You clicked on post number " + strSplitId)
-//         } else {
-//             console.log("failed, splitId is - " + splitId)
-//         }
-// })
-
-
-// Get the modal location
-// const savedLocOfModalId = document.getElementById("modalId");
-// savedLocOfModalId.innerHTML = notFilledInsert();
-// console.log("savedLocOfModalId is saved as: " + savedLocOfModalId);
-
-// Get the button that opens modal
-const btn = document.getElementById("btnId");
-
-const span = document.getElementById("close-modal");
 
 const formNotFilledPopUp = () => {
     console.log("formNotFilledPopUp is executing");
@@ -55,13 +42,16 @@ const formNotFilledPopUp = () => {
 };
 
 const validateForm = () => {
-    var a = document.forms["form"]["journalDate"].value;
-    console.log("journalDate variable a is: " + a);
+    // var a = document.forms["form"]["journalDate"].value;
+    // console.log("journalDate variable a is: " + a);
     var b = document.forms["form"]["concepts"].value;
     console.log("Title variable b is: " + b);
     var c = document.forms["form"]["journalEntry"].value;
     console.log("journalEntry variable c is: " + c);
-    if (a == "" || b == "" || c == "") {
+    if (
+		// a == "" || 
+		b == "" || 
+		c == "") {
         // console.log("abc evaluated as at least one empty string and were saved as: " + a + " and " + b + " and " + c)
         return false;
     } else {
@@ -70,10 +60,15 @@ const validateForm = () => {
       }
 }
 
-// When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//     savedLocOfModalId.style.display = "block";
-// }
+// Get the modal location and fill it with html
+const savedLocOfModalId = document.getElementById("modalId");
+savedLocOfModalId.innerHTML = notFilledInsert();
+
+// Get the button that validates if form is filled and submits entry to json
+const bothBtns = document.getElementById("bothBtns");
+
+// Gets location of X in modal to close when clicked
+const span = document.getElementById("close-modal");
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -86,39 +81,103 @@ window.onclick = function(event) {
         savedLocOfModalId.style.display = "none";
     }
 }
-
-// const closeModal = () => { 
-//     savedLocOfModalId.style.display = "none";
-// }
-
-btn.addEventListener("click", (event) => {
-    console.log("You clicked button and event is: " + event);
-	const returnedValOfValidateForm = validateForm();
-    console.log("the saved value of returnedValOfValidateForm inside event listener is: " + returnedValOfValidateForm);
-
-    if(returnedValOfValidateForm) {
-        console.log("Add Event Listener worked and validateForm returned true");
-        // run a function here
-    } else {
-        console.log("Add Event Listener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
-        formNotFilledPopUp();
-        // Get the <span> element that closes the modal
-        // const span = document.getElementById("close-modal");
-        // console.log("span is saved as: " + span);
-        // span.addEventListener("click", closeModal());
-        // savedLocOfModalId.addEventListener("click", closeModal());
+  
+// Event listener for posting new entry or cancelling
+bothBtns.addEventListener("click", event => {
+// event.preventDefault();
+if (event.target.id === "btnId") {
+    console.log("you clicked btnId")
+    const returnedValOfValidateForm = validateForm();
+    if (returnedValOfValidateForm) {
+        console.log("AddEventListener worked and validateForm returned true");
+    const theDate = document.querySelector("input[name='journalDate']").value
+    const title = document.querySelector("input[name='concepts']").value
+    const myEntry = document.querySelector("textarea[name='journalEntry']").value
+    const myMood = document.querySelector("select[name='mood']").value
+    //we haven't created a user yet - for now, I'll hard code `333`.
+    const postObject = {
+        timestamp: Date.now(),
+        // timestamp: theDate,
+        concept: title,
+        entry: myEntry,
+        mood: myMood,
+        userId: 333,
     }
-});
+    createPost(postObject).then(dbResponse => {
+        showPostList();
+		showJournalEntryForm();
+    })
+    }
+    else {
+        console.log("AddEventListener worked and evaluated as false... the value of returnedValOfValidatedForm is: " + returnedValOfValidateForm);
+        formNotFilledPopUp();
+    }   
+}
+})
 
-// span.addEventListener("click", (event) => {
-//     console.log("You clicked the X and event is: " + event);
-//     savedLocOfModalId.style.display = "none";    
-// });
+applicationElement.addEventListener("click", (event) => {
+	if (event.target.id === "cancelBtnId") {
+		console.log("you clicked cancelBtnId");
+		showJournalEntryForm();
+	}
+})
 
+postElement.addEventListener("click", (event) => {
+	if (event.target.id.startsWith("edit")){
+		console.log("post clicked to edit", event.target.id.split("--"))
+		console.log("the id is", event.target.id.split("--")[1])
+        const postId = event.target.id.split("--")[1];
+        getSinglePost(postId)
+        .then(response => {
+        showEdit(response);
+        window.scrollTo({ top: 0, behavior: "smooth" })
+	})
+    }
+    if (event.target.id.startsWith("delete")) {
+		console.log("delete button pressed and postId is recorded as: " + event.target.id.split("--")[1])
+        const postId = event.target.id.split("--")[1];
+        deletePost(postId)
+        .then(response => {
+        showPostList();
+        window.scrollTo({ top: 0, behavior: "smooth" })
+        })
+  }
+})
+// Get location of edit buttons
+const editElements = document.querySelector(".input__form");
 
-// if (event.target == "close-modal") {
-//     savedLocOfModalId.style.display = "none";
-// }
-// if (event.target == savedLocOfModalId){
-//     savedLocOfModalId.style.display = "none";
-// }
+editElements.addEventListener("click", event => {
+    // event.preventDefault();
+    if (event.target.id.startsWith("updatePost")) {
+        console.log("you clicked updatePost button")
+      const postId = event.target.id.split("__")[1];
+      //collect all the details into an object
+	  const title = document.querySelector("input[name='concepts']").value
+	  const myEntry = document.querySelector("textarea[name='journalEntry']").value
+	  const myMood = document.querySelector("select[name='mood']").value
+      const entryObject = {
+		timestamp: Date.now(),
+        // timestamp: theDate,
+        concept: title,
+        entry: myEntry,
+        mood: myMood,
+        id: parseInt(postId)
+        // userId: getLoggedInUser().id,
+        // timestamp: parseInt(timestamp),
+      }
+      updatePost(entryObject)
+        .then(response => {
+          showPostList();
+          showJournalEntryForm();
+        })
+    }
+	if (event.target.id === "post-cancel") {
+		console.log("you clicked CANCEL")
+		showJournalEntryForm();
+	}
+  })
+
+  
+  
+  
+   

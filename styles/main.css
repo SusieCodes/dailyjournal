@@ -17,6 +17,7 @@ body {
 header {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     text-align: left;
     background-color: white;
     border-bottom: 3px solid #BB7F8A;
@@ -52,6 +53,16 @@ header {
 
 .header__col3 {
     flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    
+}
+
+.header__col3 img {
+    width: 250px;
+    align-self: flex-end;
+    margin-right: 30px;
 }
 
 /* set main as flexbox so horizontal lines on page would center  */
@@ -67,7 +78,7 @@ main {
 .main__spacer {
     background-color: rgb(255, 246, 245);
     max-width: 550px;
-    max-height: 900px;
+    max-height: 640px;
     padding: 10px 30px 10px;
     margin: 15px 20px;
     border-radius: 20px;
@@ -82,8 +93,7 @@ main {
 }
 
 .main__col2 {
-    flex: 1;
-    min-width: 400px;
+    width: 350px;
     text-align: center;
 }
 
@@ -116,7 +126,7 @@ fieldset {
     font-size: 22px;
     font-weight: 400;
     text-align: left;
-    padding: 0px 20px 20px 20px;
+    padding: 10px 20px 30px 20px;
     background-color: #EED5D2;
     border: 3px solid #BB7F8A;
     border-radius: 10px;
@@ -127,6 +137,17 @@ fieldset {
 .label {
     padding: 0px;
     margin-top: 10px;
+}
+
+.flex-date {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 20px;
+}
+
+.date-display {
+    margin-left: 15px;
 }
 
 /* last label in form - separated from label class because label created uneven vertical spacing */
@@ -174,17 +195,55 @@ fieldset {
 
 }
 
-/* Record Journal Entry button */
+/* styles the buttons under the journal entry form */
+.bothBtns {
+    margin: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 .btn__record {
     width: 496px; /* match .footer & .line */
     padding: 10px;
-    margin: 15px 0px 30px;
+    margin-top: 15px;
     font-size: 22px;
     font-weight: 600;
     background-color: #d7a9b2;
     border: 3px solid #BB7F8A;
     border-radius: 10px;
     align-self: center;
+}
+
+.btn__cancel {
+    width: 496px; /* match .footer & .line */
+    padding: 10px;
+    margin: 15px 0px;;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: #d7a9b2;
+    border: 3px solid #BB7F8A;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.postBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.post-btn {
+    font-size: 16px;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: black;
+    background-color: #d7a9b2;
+    border: 3px solid #BB7F8A;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 30px 15px 5px 15px;
 }
 
 /* starts list of journal entries */
@@ -314,6 +373,65 @@ ul li:before {
     padding: 0px;
     margin: 0px;
 }
+
+/*  styles the buttons under the edit entry form */
+.new-entry-btns {
+    margin: auto;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-submit {
+    width: 496px; /* match .footer & .line */
+    padding: 10px;
+    margin-top: 15px;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: #d7a9b2;
+    border: 3px solid #BB7F8A;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.post-cancel {
+    width: 496px; /* match .footer & .line */
+    padding: 10px;
+    margin: 15px 0px;;
+    font-size: 22px;
+    font-weight: 600;
+    background-color: #d7a9b2;
+    border: 3px solid #BB7F8A;
+    border-radius: 10px;
+    align-self: center;
+}
+
+/* .post-submit {
+    font-size: 16px;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: black;
+    background-color: #e6afba;
+    border: 3px solid #BB7F8A;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 15px 5px 0px 5px;
+} */
+
+/* .post-cancel {
+    font-size: 16px;
+    font-weight: bolder;
+    white-space: nowrap;
+    color: black;
+    background-color: #e6afba;
+    border: 3px solid #BB7F8A;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 15px 5px 0px 5px;
+} */
+
+
 
 /* ends journalEntry styling  */
 
