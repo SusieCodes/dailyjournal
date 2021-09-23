@@ -65,7 +65,7 @@ const savedLocOfModalId = document.getElementById("modalId");
 savedLocOfModalId.innerHTML = notFilledInsert();
 
 // Get the button that validates if form is filled and submits entry to json
-const bothBtns = document.getElementById("bothBtns");
+// const bothBtns = document.getElementById("bothBtns");
 
 // Gets location of X in modal to close when clicked
 const span = document.getElementById("close-modal");
@@ -83,7 +83,7 @@ window.onclick = function(event) {
 }
   
 // Event listener for posting new entry or cancelling
-bothBtns.addEventListener("click", event => {
+applicationElement.addEventListener("click", event => {
 // event.preventDefault();
 if (event.target.id === "btnId") {
     console.log("you clicked btnId")
@@ -122,7 +122,7 @@ applicationElement.addEventListener("click", (event) => {
 	}
 })
 
-postElement.addEventListener("click", (event) => {
+applicationElement.addEventListener("click", (event) => {
 	if (event.target.id.startsWith("edit")){
 		console.log("post clicked to edit", event.target.id.split("--"))
 		console.log("the id is", event.target.id.split("--")[1])
@@ -143,10 +143,8 @@ postElement.addEventListener("click", (event) => {
         })
   }
 })
-// Get location of edit buttons
-const editElements = document.querySelector(".input__form");
 
-editElements.addEventListener("click", event => {
+applicationElement.addEventListener("click", event => {
     // event.preventDefault();
     if (event.target.id.startsWith("updatePost")) {
         console.log("you clicked updatePost button")
